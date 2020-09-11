@@ -62,7 +62,7 @@
                 <th>Weight</th>
                 <th>Dimension</th>
                 <th>Battery</th>
-                <th>Image</th>
+                <th>Image<?=$j;?></th>
               </tr>
             </thead>
             <tbody>

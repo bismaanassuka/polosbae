@@ -2,16 +2,25 @@
     
    class home extends CI_Controller  
    {  
-      public function index()  
-      {  
-         //load the database  
-         $this->load->database();  
-         //load the model  
-         $this->load->model('product_model');  
+      public function __construct() {
+
+         parent::__construct();
+         $this->load->model('product_model');
+           
+      }
+
+      public function indexx()  
+      {   
          //load the method of model  
-         $data['h']=$this->product_model->select();  
+         $data['h'] = $this->product_model->getAll();  
          //return the data in view  
          $this->load->view('index', $data);  
       }  
+      public function index()
+      {
+         $data['h'] = $this->product_model->getAll();  
+         //return the data in view  
+         $this->load->view('index', $data);  
+      }
    }  
 ?>  
