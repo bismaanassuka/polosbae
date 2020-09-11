@@ -66,25 +66,25 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($h as $product) : ?>
+              <?php foreach ($h->result() as $product) : ?>
                 <tr>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Name; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Name; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Name; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Name; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Name; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Name; ?>
                   </td>
                   <td>
                     <?php echo $product->Name ?>
