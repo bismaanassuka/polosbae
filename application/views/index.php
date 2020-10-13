@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
 </head>
 
 <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <section class="hero is-primary">
     <div class="hero-body">
       <div class="container">
@@ -44,15 +46,6 @@
           <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <!-- public $Name;
-                public $Processor;
-                public $Gpu;
-                public $Display;
-                public $Memory;
-                public $Storage;
-                public $Weight;
-                public $Dimension;
-                public $Battery; -->
                 <th>Name</th>
                 <th>Processor</th>
                 <th>Gpu</th>
@@ -68,41 +61,51 @@
             <tbody>
               <?php foreach ($h as $product) : ?>
                 <tr>
-                  <td>
+                  <td class="nr">
                     <?php echo $product->Name; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <a href="<?php echo site_url("home/indexx")?> " class="use-address" >
+                      uji
+                    </a>
+
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <?php echo $product->Processor; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <?php echo $product->Gpu; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <?php echo $product->Display; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <?php echo $product->Storage; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Memory; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Weight ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Dimension ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Battery ?>
                   </td>
                 </tr>
               <?php endforeach; ?>
-
+              <script>
+                $(".use-address").click(function() {
+                  var $row = $(this).closest("tr"); // Find the row
+                  $uji = $row.find(".nr").text(); // Find the text
+                  // Let's test it out
+                });
+              </script>
             </tbody>
           </table>
+
         </div>
       </div>
     </div>
