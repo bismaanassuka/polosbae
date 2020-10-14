@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <script>
+        window.onload = alert(localStorage.getItem("storageName"));
+    </script>
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
@@ -21,7 +24,7 @@
                             <select>
                                 <option>LAPTOP </option>
                                 <option>COMPUTER</option>
-                                <option><?php echo $uji ?></option>
+                                <option><?php echo $something = $_SESSION['varname']; ?></option>
                             </select>
                         </span>
                     </p>

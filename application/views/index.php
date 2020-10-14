@@ -65,8 +65,14 @@
                     <?php echo $product->Name; ?>
                   </td>
                   <td>
-                    <a href="<?php echo site_url("home/indexx")?> " class="use-address" >
-                      uji
+                    <a  class="use-address">
+                      <?php echo $something ?>
+                    </a>
+
+                  </td>
+                  <td>
+                    <a  class="use-address1">
+                      <?php echo $something ?>
                     </a>
 
                   </td>
@@ -99,7 +105,19 @@
               <script>
                 $(".use-address").click(function() {
                   var $row = $(this).closest("tr"); // Find the row
-                  $uji = $row.find(".nr").text(); // Find the text
+                  $something = $row.find(".nr").text(); // Find the text
+                  sessionStorage.setItem("nama", $something);
+                  alert($something)
+                  // Let's test it out
+                });
+              </script>
+              <?php
+                $jj =  "<script>document.writeln(something);</script>";
+              ?>
+              <script>
+                $(".use-address1").click(function() {
+                  var ty = "<?php echo $jj ?>";
+                  alert(ty)
                   // Let's test it out
                 });
               </script>
