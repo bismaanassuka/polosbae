@@ -14,4 +14,15 @@ class product_model extends CI_Model
         $query = $this->db->get('data_ty')->result();
         return $query;
     }
+
+    public function search($keyword){
+        $this->db->like('Name', $keyword);
+        $this->db->or_like('Processor', $keyword);
+        $this->db->or_like('GPU', $keyword);
+        $this->db->or_like('Memory', $keyword);
+        $this->db->or_like('Display', $keyword);
+        
+        $query = $this->db->get('data_ty')->result(); 
+        return $query; 
+      }
 }

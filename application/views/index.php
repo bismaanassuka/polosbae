@@ -22,37 +22,31 @@
 
     <div class="hero-body">
       <div class="container">
+      <form method="POST" action="<?php echo site_url("product/search") ?>">
         <div class="field has-addons has-addons-centered ">
           <p class="control">
             <span class="select">
               <select>
-                <option>LAPTOP</option>
-                <option>COMPUTER</option>
+                <option><a>LAPTOP</a></option>
+                <option><a>COMPUTER</a></option>
+                
               </select>
             </span>
           </p>
           <p class="control " style="width: 50%;">
-            <input class="input" type="text" placeholder="Amount of money">
+            <input class="input" type="text" placeholder="Amount of money" name="keyword">
           </p>
           <p class="control" tyle="width: 50%;">
-            <a class="button is-primary">
+            <button class="button is-primary"  type="submit">
               Transfer
-            </a>
+            </button>
           </p>
         </div>
+        </form>
         <div class="table-responsive">
           <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <!-- public $Name;
-                public $Processor;
-                public $Gpu;
-                public $Display;
-                public $Memory;
-                public $Storage;
-                public $Weight;
-                public $Dimension;
-                public $Battery; -->
                 <th>Name</th>
                 <th>Processor</th>
                 <th>Gpu</th>
@@ -62,7 +56,7 @@
                 <th>Weight</th>
                 <th>Dimension</th>
                 <th>Battery</th>
-                <th>Image</th>
+                <!-- <th>Image</th> -->
               </tr>
             </thead>
             <tbody>
@@ -72,32 +66,32 @@
                     <?php echo $product->Name; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <?php echo $product->Processor; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <?php echo $product->Gpu; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <?php echo $product->Display; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <?php echo $product->Memory; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name; ?>
+                    <?php echo $product->Storage; ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Weight ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Dimension ?>
                   </td>
                   <td>
-                    <?php echo $product->Name ?>
+                    <?php echo $product->Battery ?>
                   </td>
-                  <td>
-                    <?php echo $product->Name ?>
-                  </td>
+                  <!-- <td>
+                    <?php echo $product->Image ?>
+                  </td> -->
                 </tr>
               <?php endforeach; ?>
 
@@ -107,6 +101,9 @@
       </div>
     </div>
   </section>
+
+  <script src="<?php echo base_url("js/jquery.min.js"); ?>"></script> <!-- Load library jquery -->
+  <script src="<?php echo base_url("js/config.js"); ?>"></script> <!-- Load file process.js -->
 </body>
 
 </html>
